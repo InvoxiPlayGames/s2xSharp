@@ -16,6 +16,12 @@ namespace s2xSharp
         public SpiceCard Card { get; private set; }
         public SpiceCoin Coin { get; private set; }
         public SpiceInfo Info { get; private set; }
+        public SpiceLights Lights { get; private set; }
+        public SpiceKeypads Keypads { get; private set; }
+        public SpiceButtons Buttons { get; private set; }
+
+        public SpiceIIDX IIDX { get; private set; }
+        public SpiceDRS DRS { get; private set; }
 
         public SpiceAPI(string ip, int port)
         {
@@ -25,6 +31,12 @@ namespace s2xSharp
             Card = new SpiceCard(this);
             Coin = new SpiceCoin(this);
             Info = new SpiceInfo(this);
+            Lights = new SpiceLights(this);
+            Keypads = new SpiceKeypads(this);
+            Buttons = new SpiceButtons(this);
+
+            IIDX = new SpiceIIDX(this);
+            DRS = new SpiceDRS(this);
         }
 
         public SpiceAPI(int port) : this("127.0.0.1", port)
@@ -52,7 +64,10 @@ namespace s2xSharp
 
             // send off the request
             _currentid++;
-            string resptxt = RawMessage(JsonSerializer.Serialize(request));
+            string reqtxt = JsonSerializer.Serialize(request);
+            Console.WriteLine(reqtxt);
+            string resptxt = RawMessage(reqtxt);
+            Console.WriteLine(resptxt);
             SpiceResponse? response = JsonSerializer.Deserialize<SpiceResponse>(resptxt);
             if (response == null)
                 throw new Exception("Failed to decode response from server");

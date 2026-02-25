@@ -5,7 +5,6 @@ using System.Text.Json;
 
 namespace s2xSharp.Modules
 {
-
     public class SpiceInfo
     {
         public class AVS

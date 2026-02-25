@@ -30,6 +30,19 @@ namespace s2xSharp.Test
             Console.WriteLine("Inserting card...");
             api.Card.Insert(0, "E004010000000000");
 
+            Console.WriteLine("Lights:");
+            SpiceLights.Light[] lights = api.Lights.Read();
+            foreach(var light in lights)
+            {
+                Console.WriteLine($"  {light.name} = {light.state} ({light.enabled})");
+            }
+
+            Console.WriteLine("Buttons:");
+            SpiceButtons.Button[] buttons = api.Buttons.Read();
+            foreach (var button in buttons)
+            {
+                Console.WriteLine($"  {button.name} = {button.state} ({button.enabled})");
+            }
         }
     }
 }
