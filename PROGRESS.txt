@@ -1,0 +1,87 @@
+core:
+
+- [x] TCP connection
+- [ ] websocket connection
+- [ ] password encryption
+
+--
+
+modules:
+
+- [ ] analogs
+  - [ ] read
+  - [ ] write
+  - [ ] write_reset
+
+- [ ] buttons
+  - [x] read
+  - [ ] write
+  - [ ] write_reset
+
+- [ ] capture
+  - [ ] get_screens
+  - [ ] get_jpg
+
+- [x] card
+  - [x] insert
+
+- [x] coin
+  - [x] get
+  - [x] set
+  - [x] insert
+  - [x] blocker_get
+
+- [ ] control
+  - [ ] raise
+  - [ ] exit
+  - [ ] restart
+  - [ ] session_refresh
+  - [ ] shutdown
+  - [ ] reboot
+
+- [ ] ddr
+  - [ ] tapeled_get
+
+- [x] drs
+  - [x] tapeled_get
+  - [x] touch_set
+
+- [ ] iidx
+  - [x] ticker_get
+  - [x] ticker_set
+  - [x] ticker_reset
+  - [ ] tapeled_get
+
+- [x] info
+  - [x] avs
+  - [x] launcher
+  - [x] memory
+
+- [x] keypads
+  - [x] write
+  - [x] set
+  - [x] get
+
+- [ ] lcd
+  - [ ] info
+
+- [ ] lights
+  - [x] read
+  - [ ] write
+  - [ ] write_reset
+
+- [ ] memory
+  - [ ] write
+  - [ ] read
+  - [ ] signature
+
+- [ ] resize
+  - [ ] image_resize_enable
+  - [ ] image_resize_set_scene
+
+- [ ] touch
+  - [ ] read
+  - [ ] write
+  - [ ] write_reset
+
+--

@@ -42,7 +42,7 @@ namespace s2xSharp.Modules
             JsonElement[] array = new JsonElement[touches.Length];
             for (int i = 0; i < touches.Length; i++)
             {
-                array[i] = JsonSerializer.Deserialize<JsonElement>($"[{touches[i].type}, {touches[i].id}, {touches[i].x}, {touches[i].y}, {touches[i].width}, {touches[i].height}]"); // I'M SORRY
+                array[i] = JsonSerializer.Deserialize<JsonElement>($"[{(int)touches[i].type}, {touches[i].id}, {touches[i].x}, {touches[i].y}, {touches[i].width}, {touches[i].height}]"); // I'M SORRY
             }
             _api.Command("drs", "touch_set", array);
         }

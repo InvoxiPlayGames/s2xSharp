@@ -65,9 +65,9 @@ namespace s2xSharp
             // send off the request
             _currentid++;
             string reqtxt = JsonSerializer.Serialize(request);
-            Console.WriteLine(reqtxt);
+            //Console.WriteLine(reqtxt);
             string resptxt = RawMessage(reqtxt);
-            Console.WriteLine(resptxt);
+            //Console.WriteLine(resptxt);
             SpiceResponse? response = JsonSerializer.Deserialize<SpiceResponse>(resptxt);
             if (response == null)
                 throw new Exception("Failed to decode response from server");
